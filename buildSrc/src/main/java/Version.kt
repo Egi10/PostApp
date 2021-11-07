@@ -1,6 +1,9 @@
 object Version {
     const val gradle = "7.0.3"
     const val kotlin = "1.5.31"
+    const val retrofit = "2.9.0"
+    const val hilt = "2.40"
+    const val coroutine = "1.5.2"
 
     object Testing {
         const val jUnit = "4.+"

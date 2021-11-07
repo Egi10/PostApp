@@ -8,4 +8,5 @@ object Config {
     const val versionName = "1.0"
 
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    const val consumerProguardFiles = "consumer-rules.pro"
 }

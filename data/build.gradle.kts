@@ -1,8 +1,9 @@
+import extensions.coroutine
 import extensions.hilt
 import extensions.retrofit
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("kotlin-android")
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
@@ -12,13 +13,11 @@ android {
     compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = Config.applicationId
         minSdk = Config.minSdk
         targetSdk = Config.targetSdk
-        versionCode = Config.versionCode
-        versionName = Config.versionName
 
         testInstrumentationRunner = Config.testInstrumentationRunner
+        consumerProguardFiles(Config.consumerProguardFiles)
     }
 
     buildTypes {
@@ -39,23 +38,13 @@ android {
     }
 }
 
-dependencies {
-
-    implementation(Dependencies.AndroidX.coreKtx)
-    implementation(Dependencies.AndroidX.appCompat)
-    implementation(Dependencies.AndroidX.material)
-    implementation(Dependencies.AndroidX.constraintLayout)
-    testImplementation(Dependencies.Testing.jUnit)
-    androidTestImplementation(Dependencies.Testing.extJunit)
-    androidTestImplementation(Dependencies.Testing.espressoCore)
-    // Hilt
-    hilt()
-    // Retrofit
-    retrofit()
-    // Data
-    implementation(project(Modules.data))
-}
-
 kapt {
     correctErrorTypes = true
+}
+
+dependencies {
+
+    coroutine()
+    retrofit()
+    hilt()
 }

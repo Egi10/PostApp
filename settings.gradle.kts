@@ -7,3 +7,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Post App"
 include(":app")
+include(":data")
