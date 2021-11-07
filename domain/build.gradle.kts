@@ -1,6 +1,5 @@
 import extensions.coroutine
 import extensions.hilt
-import extensions.retrofit
 
 plugins {
     id("com.android.library")
@@ -45,8 +44,5 @@ kapt {
 dependencies {
 
     coroutine()
-    retrofit()
     hilt()
-    // Domain
-    implementation(project(Modules.domain))
 }
