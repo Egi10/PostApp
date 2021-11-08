@@ -1,6 +1,7 @@
-package id.buaja.data.util
+package id.buaja.data.helper
 
 
+import id.buaja.data.util.ApiResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

@@ -5,7 +5,8 @@ import id.buaja.data.source.post.response.PostCommentsResponse
 import id.buaja.data.source.post.response.PostResponse
 import id.buaja.data.source.post.routes.PostServices
 import id.buaja.data.util.ApiResult
-import id.buaja.data.util.safeApiCall
+import id.buaja.data.helper.safeApiCall
+import id.buaja.data.source.post.response.PostResponseItem
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -16,7 +17,7 @@ class PostDataSourceImpl @Inject constructor(
     private val postServices: PostServices,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : PostDataSource {
-    override fun getPost(): Flow<PostResponse> {
+    override fun getPost(): Flow<List<PostResponseItem>> {
         return flow {
             val result = postServices.getPost()
             emit(result)

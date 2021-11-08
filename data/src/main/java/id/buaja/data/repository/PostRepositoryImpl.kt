@@ -21,7 +21,7 @@ class PostRepositoryImpl @Inject constructor(
                 .flatMapMerge { post ->
                     val result: MutableList<Post> = mutableListOf()
 
-                    post.postResponse?.forEach { postResponse ->
+                    post.forEach { postResponse ->
                         usersDataSource.getUserById(postResponse.userId ?: 0)
                             .collect { user ->
                                 val resultMap = DataMapper.mapResponseToModelPost(

@@ -1,0 +1,5 @@
+<resources>
+    <string name="ops_error">Ops! Error</string>
+    <string name="post">Post</string>
+    <string name="details_post">Detail Post</string>
+</resources>

@@ -37,6 +37,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
 }
 
 dependencies {
@@ -54,6 +59,8 @@ dependencies {
     retrofit()
     // Data
     implementation(project(Modules.data))
+    // Home
+    implementation(project(Modules.Features.home))
 }
 
 kapt {

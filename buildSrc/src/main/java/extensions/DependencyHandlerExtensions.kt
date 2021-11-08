@@ -22,6 +22,15 @@ fun DependencyHandler.retrofit() {
     implementation(Dependencies.Retrofit.converterGson)
 }
 
+fun DependencyHandler.compose() {
+    implementation(Dependencies.Compose.composeUi)
+    implementation(Dependencies.Compose.material)
+    implementation(Dependencies.Compose.uiToolingPreview)
+    implementation(Dependencies.Compose.activityCompose)
+    implementation(Dependencies.Compose.uiTestJunit4)
+    implementation(Dependencies.Compose.uiTooling)
+}
+
 fun DependencyHandler.implementation(dependencyNotation: String) {
     add("implementation", dependencyNotation)
 }

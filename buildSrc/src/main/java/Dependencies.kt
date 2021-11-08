@@ -11,6 +11,13 @@ object Dependencies {
         const val material = "com.google.android.material:material:${Version.AndroidX.material}"
         const val constraintLayout =
             "androidx.constraintlayout:constraintlayout:${Version.AndroidX.constraintLayout}"
+        const val lifecycleViewModel =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.AndroidX.lifecycleViewModel}"
+        const val fragmentKtx = "androidx.fragment:fragment-ktx:${Version.AndroidX.fragmentKtx}"
+        const val navigationFragmentKtx =
+            "androidx.navigation:navigation-fragment-ktx:${Version.AndroidX.navigation}"
+        const val navigationUiKtx =
+            "androidx.navigation:navigation-ui-ktx:${Version.AndroidX.navigation}"
     }
 
     object Testing {
@@ -45,5 +52,16 @@ object Dependencies {
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutine}"
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Version.coroutine}"
         const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.coroutine}"
+    }
+
+    object Compose {
+        const val composeUi = "androidx.compose.ui:ui:${Version.Compose.compose}"
+        const val material = "androidx.compose.material:material:${Version.Compose.compose}"
+        const val uiToolingPreview =
+            "androidx.compose.ui:ui-tooling-preview:${Version.Compose.compose}"
+        const val activityCompose =
+            "androidx.activity:activity-compose:${Version.Compose.activity}"
+        const val uiTestJunit4 = "androidx.compose.ui:ui-test-junit4:${Version.Compose.compose}"
+        const val uiTooling = "androidx.compose.ui:ui-tooling:${Version.Compose.compose}"
     }
 }

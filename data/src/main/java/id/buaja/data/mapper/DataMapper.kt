@@ -16,7 +16,7 @@ object DataMapper {
                 id = post.id ?: 0,
                 idUser = post.userId ?: 0,
                 title = post.title ?: "",
-                body = post.body ?: "",
+                body = post.body?.replace("\n", " ") ?: "",
                 userName = user.name ?: "",
                 userCompanyName = user.company?.name ?: ""
             )
