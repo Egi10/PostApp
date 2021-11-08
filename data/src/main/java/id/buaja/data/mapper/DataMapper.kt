@@ -1,6 +1,6 @@
 package id.buaja.data.mapper
 
-import id.buaja.data.source.post.response.PostCommentsResponse
+import id.buaja.data.source.post.response.PostCommentsResponseItem
 import id.buaja.data.source.post.response.PostResponseItem
 import id.buaja.data.source.users.response.UsersResponse
 import id.buaja.domain.model.Post
@@ -24,15 +24,15 @@ object DataMapper {
     }
 
     fun mapResponseToModelPostComments(
-        postComments: PostCommentsResponse
+        postComments: List<PostCommentsResponseItem>
     ): List<PostComments> {
         val list: MutableList<PostComments> = mutableListOf()
 
-        postComments.postCommentsResponse?.map {
+        postComments.map {
             list.add(
                 PostComments(
                     name = it.name ?: "",
-                    body = it.body ?: ""
+                    body = it.body?.replace("\n", " ") ?: ""
                 )
             )
         }

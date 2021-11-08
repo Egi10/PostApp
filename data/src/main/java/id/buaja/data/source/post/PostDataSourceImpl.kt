@@ -1,12 +1,11 @@
 package id.buaja.data.source.post
 
 import id.buaja.data.di.IoDispatcher
-import id.buaja.data.source.post.response.PostCommentsResponse
-import id.buaja.data.source.post.response.PostResponse
+import id.buaja.data.helper.safeApiCall
+import id.buaja.data.source.post.response.PostCommentsResponseItem
+import id.buaja.data.source.post.response.PostResponseItem
 import id.buaja.data.source.post.routes.PostServices
 import id.buaja.data.util.ApiResult
-import id.buaja.data.helper.safeApiCall
-import id.buaja.data.source.post.response.PostResponseItem
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -24,7 +23,7 @@ class PostDataSourceImpl @Inject constructor(
         }.flowOn(ioDispatcher)
     }
 
-    override fun getCommentsPost(idPost: Int): Flow<ApiResult<PostCommentsResponse>> {
+    override fun getCommentsPost(idPost: Int): Flow<ApiResult<List<PostCommentsResponseItem>>> {
         return safeApiCall(ioDispatcher) {
             postServices.getPostWithComments(idPost)
         }

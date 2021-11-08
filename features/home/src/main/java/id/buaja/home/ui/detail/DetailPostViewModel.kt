@@ -1,10 +1,10 @@
-package id.buaja.home.ui.home
+package id.buaja.home.ui.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.buaja.abstraction.util.UiState
-import id.buaja.domain.model.Post
+import id.buaja.domain.model.PostComments
 import id.buaja.domain.usecase.PostUseCase
 import id.buaja.domain.util.ResultState
 import kotlinx.coroutines.flow.*
@@ -12,19 +12,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class DetailPostViewModel @Inject constructor(
     private val postUseCase: PostUseCase
 ) : ViewModel() {
-    private val _uiState = MutableStateFlow(UiState<List<Post>>(loading = true))
-    val uiState: StateFlow<UiState<List<Post>>> get() = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(UiState<List<PostComments>>(loading = true))
+    val uiState: StateFlow<UiState<List<PostComments>>> get() = _uiState
 
-    init {
-        getPost()
-    }
-
-    private fun getPost() {
+    fun getPostComment(idPost: Int) {
         viewModelScope.launch {
-            postUseCase.getPostWithUser()
+            postUseCase.getPostComments(idPost)
                 .onStart {
                     _uiState.update {
                         it.copy(loading = true)

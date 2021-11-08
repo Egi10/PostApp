@@ -2,12 +2,6 @@ package id.buaja.data.source.post.response
 
 import com.google.gson.annotations.SerializedName
 
-data class PostResponse(
-
-	@field:SerializedName("PostResponse")
-	val postResponse: List<PostResponseItem>? = null
-)
-
 data class PostResponseItem(
 
 	@field:SerializedName("id")
