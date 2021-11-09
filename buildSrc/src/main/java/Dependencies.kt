@@ -1,4 +1,6 @@
 object Dependencies {
+    const val coil = "io.coil-kt:coil-compose:${Version.coil}"
+
     object BuildPlugin {
         const val gradle = "com.android.tools.build:gradle:${Version.gradle}"
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.kotlin}"

@@ -4,6 +4,7 @@ object Version {
     const val retrofit = "2.9.0"
     const val hilt = "2.40"
     const val coroutine = "1.5.2"
+    const val coil = "1.4.0"
 
     object Testing {
         const val jUnit = "4.+"

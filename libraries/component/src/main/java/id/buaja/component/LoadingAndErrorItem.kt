@@ -1,15 +1,11 @@
-package id.buaja.home.ui.detail
+package id.buaja.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import id.buaja.abstraction.util.UiState
-import id.buaja.component.ErrorMessage
-import id.buaja.component.LoadingCircular
-import id.buaja.domain.model.post.PostComments
-import id.buaja.home.R
 
 @Composable
-fun LoadingAndErrorItem(result: UiState<List<PostComments>>) {
+fun <T> LoadingAndErrorItem(result: UiState<T>) {
     when {
         result.loading -> {
             LoadingCircular()
@@ -17,7 +13,7 @@ fun LoadingAndErrorItem(result: UiState<List<PostComments>>) {
 
         result.error.isNotEmpty() -> {
             ErrorMessage(
-                title = stringResource(R.string.ops_error),
+                title = stringResource(R.string.maintenances),
                 message = result.error
             )
         }

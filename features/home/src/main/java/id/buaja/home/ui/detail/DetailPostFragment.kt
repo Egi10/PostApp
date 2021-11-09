@@ -10,9 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import id.buaja.component.LoadingAndErrorItem
 import id.buaja.domain.model.post.Post
 import id.buaja.home.R
-import id.buaja.users.UsersDetailFragment
+import id.buaja.users.users.UsersDetailFragment
 
 @AndroidEntryPoint
 class DetailPostFragment : Fragment() {

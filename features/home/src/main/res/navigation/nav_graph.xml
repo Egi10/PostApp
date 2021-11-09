@@ -22,6 +22,6 @@
     </fragment>
     <fragment
         android:id="@+id/usersDetailFragment"
-        android:name="id.buaja.users.UsersDetailFragment"
+        android:name="id.buaja.users.users.UsersDetailFragment"
         android:label="UsersDetailFragment" />
 </navigation>

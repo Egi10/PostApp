@@ -1,8 +1,12 @@
 import extensions.compose
+import extensions.coroutine
+import extensions.hilt
 
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -45,17 +49,33 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
 
     implementation(Dependencies.AndroidX.coreKtx)
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.material)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.AndroidX.lifecycleViewModel)
+    implementation(Dependencies.AndroidX.fragmentKtx)
     testImplementation(Dependencies.Testing.jUnit)
     androidTestImplementation(Dependencies.Testing.extJunit)
     androidTestImplementation(Dependencies.Testing.espressoCore)
+    // Hilt
+    hilt()
+    // Coroutine
+    coroutine()
+    // Coil
+    implementation(Dependencies.coil)
     // Compose
     compose()
+    // Domain
+    implementation(project(Modules.domain))
     // Abstraction
     implementation(project(Modules.Libraries.abstraction))
+    // Component
+    implementation(project(Modules.Libraries.component))
 }

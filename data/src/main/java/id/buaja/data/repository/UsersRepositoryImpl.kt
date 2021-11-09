@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class UsersRepositoryImpl @Inject constructor(
     private val usersDataSource: UsersDataSource
-): UsersRepository {
+) : UsersRepository {
     override fun getUser(idUser: Int): Flow<ResultState<Users>> {
         return channelFlow {
             usersDataSource.getUserById(idUser)
@@ -42,20 +42,27 @@ class UsersRepositoryImpl @Inject constructor(
 
         albums.forEach { albumsUser ->
             usersDataSource.getPhotosByIdAlbums(albumsUser.id ?: 0)
-                .collectIndexed { index, value ->
+                .collect { photo ->
+                    val listPhoto: MutableList<Photos> = mutableListOf()
+
+                    photo.forEach {
+                        listPhoto.add(
+                            Photos(
+                                title = it.title ?: "",
+                                thumbnail = it.thumbnailUrl ?: ""
+                            )
+                        )
+                    }
+
                     listAlbums.add(
                         Albums(
                             name = albumsUser.title ?: "",
-                            photos = listOf(
-                                Photos(
-                                    title = value[index].title ?: "",
-                                    thumbnail = value[index].thumbnailUrl ?: ""
-                                )
-                            )
+                            photos = listPhoto
                         )
                     )
                 }
         }
+
         return listAlbums
     }
 }
