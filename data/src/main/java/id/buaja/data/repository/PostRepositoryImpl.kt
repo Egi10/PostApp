@@ -4,8 +4,8 @@ import id.buaja.data.mapper.DataMapper
 import id.buaja.data.source.post.PostDataSource
 import id.buaja.data.source.users.UsersDataSource
 import id.buaja.data.util.ApiResult
-import id.buaja.domain.model.Post
-import id.buaja.domain.model.PostComments
+import id.buaja.domain.model.post.Post
+import id.buaja.domain.model.post.PostComments
 import id.buaja.domain.repository.PostRepository
 import id.buaja.domain.util.ResultState
 import kotlinx.coroutines.flow.*

@@ -76,4 +76,6 @@ dependencies {
     implementation(project(Modules.Libraries.abstraction))
     // Component
     implementation(project(Modules.Libraries.component))
+    // Users
+    implementation(project(Modules.Features.users))
 }

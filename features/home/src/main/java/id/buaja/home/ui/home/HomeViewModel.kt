@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import id.buaja.abstraction.util.UiState
-import id.buaja.domain.model.Post
-import id.buaja.domain.usecase.PostUseCase
+import id.buaja.domain.model.post.Post
+import id.buaja.domain.usecase.post.PostUseCase
 import id.buaja.domain.util.ResultState
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch

@@ -5,7 +5,7 @@ import androidx.compose.ui.res.stringResource
 import id.buaja.abstraction.util.UiState
 import id.buaja.component.ErrorMessage
 import id.buaja.component.LoadingCircular
-import id.buaja.domain.model.PostComments
+import id.buaja.domain.model.post.PostComments
 import id.buaja.home.R
 
 @Composable

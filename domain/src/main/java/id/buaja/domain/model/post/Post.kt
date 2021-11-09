@@ -1,4 +1,4 @@
-package id.buaja.domain.model
+package id.buaja.domain.model.post
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

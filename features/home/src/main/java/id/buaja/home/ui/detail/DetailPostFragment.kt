@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import dagger.hilt.android.AndroidEntryPoint
-import id.buaja.domain.model.Post
+import id.buaja.domain.model.post.Post
+import id.buaja.home.R
+import id.buaja.users.UsersDetailFragment
 
 @AndroidEntryPoint
 class DetailPostFragment : Fragment() {
@@ -31,6 +33,15 @@ class DetailPostFragment : Fragment() {
                 comments = result.data ?: emptyList(),
                 contentError = {
                     LoadingAndErrorItem(result)
+                },
+                detailUser = {
+                    val bundle = Bundle()
+                    bundle.putInt(UsersDetailFragment.USER_ID, it)
+                    findNavController()
+                        .navigate(
+                            R.id.action_detailPostFragment_to_usersDetailFragment,
+                            bundle
+                        )
                 },
                 navigationBack = {
                     findNavController().popBackStack()

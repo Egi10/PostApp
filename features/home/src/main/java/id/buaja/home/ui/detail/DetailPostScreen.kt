@@ -1,5 +1,6 @@
 package id.buaja.home.ui.detail
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -12,8 +13,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import id.buaja.component.PostTopAppBar
-import id.buaja.domain.model.Post
-import id.buaja.domain.model.PostComments
+import id.buaja.domain.model.post.Post
+import id.buaja.domain.model.post.PostComments
 import id.buaja.home.R
 
 @Composable
@@ -21,6 +22,7 @@ fun DetailPostScreen(
     post: Post?,
     comments: List<PostComments>,
     contentError: @Composable ColumnScope.() -> Unit,
+    detailUser: (Int) -> Unit,
     navigationBack: () -> Unit
 ) {
     Column(
@@ -38,6 +40,10 @@ fun DetailPostScreen(
         ) {
             item {
                 Text(
+                    modifier = Modifier
+                        .clickable {
+                            detailUser.invoke(post?.idUser ?: 0)
+                        },
                     text = "${post?.userName} | ${post?.userCompanyName}",
                     fontSize = 12.sp,
                 )

@@ -1,4 +1,4 @@
-package id.buaja.domain.model
+package id.buaja.domain.model.post
 
 data class PostComments(
     val body: String,

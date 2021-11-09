@@ -3,8 +3,8 @@ package id.buaja.data.mapper
 import id.buaja.data.source.post.response.PostCommentsResponseItem
 import id.buaja.data.source.post.response.PostResponseItem
 import id.buaja.data.source.users.response.UsersResponse
-import id.buaja.domain.model.Post
-import id.buaja.domain.model.PostComments
+import id.buaja.domain.model.post.Post
+import id.buaja.domain.model.post.PostComments
 
 object DataMapper {
     fun mapResponseToModelPost(

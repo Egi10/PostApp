@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import id.buaja.component.ErrorMessage
 import id.buaja.component.LoadingCircular
 import id.buaja.component.PostTopAppBar
-import id.buaja.domain.model.Post
+import id.buaja.domain.model.post.Post
 import id.buaja.home.R
 
 @Composable

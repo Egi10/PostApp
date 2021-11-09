@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import id.buaja.domain.model.PostComments
+import id.buaja.domain.model.post.PostComments
 
 @Composable
 fun PostCommentsItem(

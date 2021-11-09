@@ -9,5 +9,6 @@ object Modules {
 
     object Features {
         const val home = ":features:home"
+        const val users = ":features:users"
     }
 }

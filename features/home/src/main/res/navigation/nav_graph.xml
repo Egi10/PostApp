@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/detailPostFragment"
         android:name="id.buaja.home.ui.detail.DetailPostFragment"
-        android:label="DetailPostFragment" />
+        android:label="DetailPostFragment" >
+        <action
+            android:id="@+id/action_detailPostFragment_to_usersDetailFragment"
+            app:destination="@id/usersDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersDetailFragment"
+        android:name="id.buaja.users.UsersDetailFragment"
+        android:label="UsersDetailFragment" />
 </navigation>
