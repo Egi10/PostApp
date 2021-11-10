@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_details"
+    app:startDestination="@id/usersDetailFragment">
+
+    <fragment
+        android:id="@+id/usersDetailFragment"
+        android:name="id.buaja.users.users.UsersDetailFragment"
+        android:label="UsersDetailFragment" >
+        <action
+            android:id="@+id/action_usersDetailFragment_to_photosDetailFragment"
+            app:destination="@id/photosDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosDetailFragment"
+        android:name="id.buaja.users.photo_details.PhotosDetailFragment"
+        android:label="PhotosDetailFragment" />
+</navigation>

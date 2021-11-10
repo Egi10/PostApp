@@ -40,7 +40,7 @@ class DetailPostFragment : Fragment() {
                     bundle.putInt(UsersDetailFragment.USER_ID, it)
                     findNavController()
                         .navigate(
-                            R.id.action_detailPostFragment_to_usersDetailFragment,
+                            R.id.action_detailPostFragment_to_nav_graph,
                             bundle
                         )
                 },

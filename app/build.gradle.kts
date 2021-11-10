@@ -1,3 +1,4 @@
+import extensions.compose
 import extensions.hilt
 import extensions.retrofit
 
@@ -37,6 +38,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Version.Compose.compose
+    }
     packagingOptions {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -50,6 +57,7 @@ dependencies {
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.material)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.AndroidX.fragmentKtx)
     testImplementation(Dependencies.Testing.jUnit)
     androidTestImplementation(Dependencies.Testing.extJunit)
     androidTestImplementation(Dependencies.Testing.espressoCore)
@@ -57,6 +65,10 @@ dependencies {
     hilt()
     // Retrofit
     retrofit()
+    // Compose
+    compose()
+    // Abstraction
+    implementation(project(Modules.Libraries.abstraction))
     // Data
     implementation(project(Modules.data))
     // Home

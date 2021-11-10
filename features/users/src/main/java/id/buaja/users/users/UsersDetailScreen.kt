@@ -1,6 +1,7 @@
 package id.buaja.users.users
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -20,6 +21,7 @@ import coil.transform.RoundedCornersTransformation
 import id.buaja.abstraction.util.UiState
 import id.buaja.component.LoadingAndErrorItem
 import id.buaja.component.PostTopAppBar
+import id.buaja.domain.model.users.Photos
 import id.buaja.domain.model.users.Users
 import id.buaja.users.R
 import id.buaja.users.users.components.TitleAndDescription
@@ -27,6 +29,7 @@ import id.buaja.users.users.components.TitleAndDescription
 @Composable
 fun UsersDetailScreen(
     users: UiState<Users>,
+    imageDetail: (Photos) -> Unit = {},
     onBack: () -> Unit = {},
 ) {
     Column(
@@ -116,7 +119,11 @@ fun UsersDetailScreen(
                                     Image(
                                         painter = painter,
                                         contentDescription = null,
-                                        modifier = Modifier.size(80.dp)
+                                        modifier = Modifier
+                                            .size(80.dp)
+                                            .clickable {
+                                                imageDetail.invoke(photos)
+                                            }
                                     )
 
                                     when (painter.state) {

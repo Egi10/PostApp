@@ -17,11 +17,8 @@
         android:name="id.buaja.home.ui.detail.DetailPostFragment"
         android:label="DetailPostFragment" >
         <action
-            android:id="@+id/action_detailPostFragment_to_usersDetailFragment"
-            app:destination="@id/usersDetailFragment" />
+            android:id="@+id/action_detailPostFragment_to_nav_graph"
+            app:destination="@id/nav_graph_details" />
     </fragment>
-    <fragment
-        android:id="@+id/usersDetailFragment"
-        android:name="id.buaja.users.users.UsersDetailFragment"
-        android:label="UsersDetailFragment" />
+    <include app:graph="@navigation/nav_graph_users" />
 </navigation>
