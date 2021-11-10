@@ -5,6 +5,9 @@ object Version {
     const val hilt = "2.40"
     const val coroutine = "1.5.2"
     const val coil = "1.4.0"
+    const val mockito = "3.0.0"
+    const val mockitoKotlin = "2.2.0"
+    const val kluent = "1.68"
 
     object Testing {
         const val jUnit = "4.+"

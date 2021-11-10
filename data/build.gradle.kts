@@ -1,5 +1,6 @@
 import extensions.coroutine
 import extensions.hilt
+import extensions.mockito
 import extensions.retrofit
 
 plugins {
@@ -47,6 +48,7 @@ dependencies {
     coroutine()
     retrofit()
     hilt()
+    mockito()
     // Domain
     implementation(project(Modules.domain))
 }

@@ -31,6 +31,12 @@ fun DependencyHandler.compose() {
     implementation(Dependencies.Compose.uiTooling)
 }
 
+fun DependencyHandler.mockito() {
+    implementation(Dependencies.Mockito.inline)
+    implementation(Dependencies.Mockito.kotlin)
+    implementation(Dependencies.Mockito.kluent)
+}
+
 fun DependencyHandler.implementation(dependencyNotation: String) {
     add("implementation", dependencyNotation)
 }

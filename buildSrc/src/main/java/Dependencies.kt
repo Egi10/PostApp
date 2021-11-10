@@ -66,4 +66,10 @@ object Dependencies {
         const val uiTestJunit4 = "androidx.compose.ui:ui-test-junit4:${Version.Compose.compose}"
         const val uiTooling = "androidx.compose.ui:ui-tooling:${Version.Compose.compose}"
     }
+
+    object Mockito {
+        const val inline = "org.mockito:mockito-inline:${Version.mockito}"
+        const val kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Version.mockitoKotlin}"
+        const val kluent = "org.amshove.kluent:kluent-android:${Version.kluent}"
+    }
 }
