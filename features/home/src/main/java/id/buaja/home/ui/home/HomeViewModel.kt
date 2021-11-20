@@ -25,11 +25,6 @@ class HomeViewModel @Inject constructor(
     private fun getPost() {
         viewModelScope.launch {
             postUseCase.getPostWithUser()
-                .onStart {
-                    _uiState.update {
-                        it.copy(loading = true)
-                    }
-                }
                 .onCompletion {
                     _uiState.update {
                         it.copy(loading = false)

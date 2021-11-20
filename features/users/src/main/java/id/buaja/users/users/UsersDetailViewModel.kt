@@ -14,18 +14,18 @@ import javax.inject.Inject
 @HiltViewModel
 class UsersDetailViewModel @Inject constructor(
     private val userUseCase: UserUseCase
-): ViewModel() {
+) : ViewModel() {
     private val _uiState = MutableStateFlow(UiState<Users>(loading = true))
-    val uiState: StateFlow<UiState<Users>> get() = _uiState.asStateFlow()
+    val uiState: StateFlow<UiState<Users>>
+        get() = _uiState.stateIn(
+            initialValue = UiState(),
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5_000)
+        )
 
     fun getUser(userId: Int) {
         viewModelScope.launch {
             userUseCase.getUser(userId)
-                .onStart {
-                    _uiState.update {
-                        it.copy(loading = true)
-                    }
-                }
                 .onCompletion {
                     _uiState.update {
                         it.copy(loading = false)

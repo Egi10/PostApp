@@ -21,11 +21,6 @@ class DetailPostViewModel @Inject constructor(
     fun getPostComment(idPost: Int) {
         viewModelScope.launch {
             postUseCase.getPostComments(idPost)
-                .onStart {
-                    _uiState.update {
-                        it.copy(loading = true)
-                    }
-                }
                 .onCompletion {
                     _uiState.update {
                         it.copy(loading = false)
