@@ -10,6 +10,8 @@ import id.buaja.domain.usecase.post.PostUseCaseImpl
 import id.buaja.domain.usecase.users.UserUseCase
 import id.buaja.domain.usecase.users.UserUseCaseImpl
 
+// https://proandroiddev.com/kotlin-clean-architecture-1ad42fcd97fa
+
 @InstallIn(ViewModelComponent::class)
 @Module
 abstract class UseCaseModule {
